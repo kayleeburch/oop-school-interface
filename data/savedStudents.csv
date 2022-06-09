@@ -1,0 +1,16 @@
+name,age,role,school_id,password
+Lisa,25,Student,13345,xx
+Jessie,25,Student,12335,xx
+Slater,25,Student,12645,xx
+kim,31,Student,34456,xx
+dave,77,Student,788908,xx
+doug,88,Student,0809890,xx
+
+
+name,age,role,employee_id,password
+culpepper,25,Principal,86545,xx
+dewey,25,Janitor,85545,xx
+Mertz,25,Teacher,83545,xx
+Dickerson,25,Teacher,86542,xx
+Heimlich,25,Teacher,86745,xx
+xx,25,Principal,86545,xx

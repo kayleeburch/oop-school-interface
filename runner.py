@@ -5,28 +5,31 @@ from classes.staff import Staff
 
 def main():
     ridge = School('Ridgemont High') 
-    mode = input("\nWhat would you like to do?\nOptions:\n1. List All Students\n2. View Individual Student <student_id>\n3. Add a Student\n4. Remove a Student <student_id>\n5. Quit\n")
-    if mode == '1':
-        ridge.list_students()
-        main()
-    elif mode == '2':
-        student_id = input('Enter student id:')
-        found_student = ridge.find_student_by_id(student_id)
-        if isinstance(found_student, str):
-            print(found_student)
-            main()
+    while True:
+        mode = input("\nWhat would you like to do?\nOptions:\n1. List All Students\n2. View Individual Student <student_id>\n3. Add a Student\n4. Remove a Student <student_id>\n5. Quit\n")
+        if mode == '1':
+            ridge.list_students()
+        elif mode == '2':
+            student_id = input('Enter student id:')
+            found_student = ridge.find_student_by_id(student_id)
+            if isinstance(found_student, str):
+                print(found_student)
+            else:
+                print(str(found_student))
+        elif mode == '3':
+            student_data = {'role':'student'}
+            student_data['name']      = input('Enter student name:\n')
+            student_data['age']       = input('Enter student age: \n')
+            student_data['school_id'] = input('Enter student school id: \n')
+            student_data['password']  = input('Enter student password: \n')
+            ridge.add_student(**student_data)
+        elif mode == '4':
+            remove_id = input("Enter student ID: ")
+            ridge.remove_student(remove_id)
+        elif mode == '5':
+            break
         else:
-            print(str(found_student))
-            main()
-    elif mode == '3':
-        main()
-    elif mode == '4':
-        main() 
-    elif mode == '5':
-        return
-    else:
-        print('Incorrect entry, please try again.')
-        main()
-        
+            print('Incorrect entry, please try again.')
+            
 if __name__ == '__main__':
     main()
